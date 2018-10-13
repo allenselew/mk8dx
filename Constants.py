@@ -4,6 +4,9 @@ and the instantiation of that data into Parts
 '''
 from Part import Part
 
+# TODO: classify alike parts into categories to limit
+# combinations to unique stat sets
+
 RACERS = [
     Part("Mario"            ,6,2,4,2,2,6,6,6,6,4,4,4,4),
     Part("Luigi"            ,6,2,5,1,2,6,6,6,6,5,5,5,5),

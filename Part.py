@@ -2,8 +2,8 @@
 '''
 Base class for racers, karts, wheels and gliders.
 '''
+# TODO: figure out how to use **kwargs for __init__ and __add__
 class Part():
-    # TODO: figure out how to use **kwargs for this
     def __init__(self, name,
         weight, acceleration, on_road_traction, off_road_traction,
         mini_turbo, ground_speed, water_speed, antigravity_speed, air_speed,
