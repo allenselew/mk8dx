@@ -4,9 +4,62 @@ and the instantiation of that data into Parts
 '''
 from Part import Part
 
-# TODO: classify alike parts into categories to limit
-# combinations to unique stat sets
+RACERS = [
+    Part("Baby Racer C"       ,0,5,4,3,5,0,0,0,0,9,9,9,9),
+    Part("Baby Princess Racer",0,4,3,5,5,0,0,0,0,10,10,10,10),
+    Part("Baby Male Racer"    ,1,5,2,4,4,1,1,1,1,8,8,8,8),
+    Part("Light Shell Racer"  ,2,4,1,5,4,2,2,2,2,8,8,8,8),
+    Part("Light Racer A"      ,4,3,3,3,3,5,5,5,5,5,5,5,5),
+    Part("Light Racer B"      ,3,4,3,4,3,3,3,3,3,7,7,7,7),
+    Part("Light Racer C"      ,2,5,4,2,4,2,2,2,2,7,7,7,7),
+    Part("Light Racer D"      ,3,4,2,3,3,4,4,4,4,6,6,6,6),
+    Part("Medium Racer A"     ,6,2,4,2,2,6,6,6,6,4,4,4,4),
+    Part("Medium Racer B"     ,6,2,5,1,2,6,6,6,6,5,5,5,5),
+    Part("Medium Racer C"     ,5,3,7,1,3,5,5,5,5,5,5,5,5),
+    Part("Large Racer"        ,7,1,9,3,2,7,7,7,7,3,3,3,3),
+    Part("Heavy Racer A"      ,8,1,10,0,1,9,9,9,9,2,2,2,2),
+    Part("Heavy Racer B"      ,9,0,5,1,0,10,10,10,10,1,1,1,1),
+    Part("Ultra Heavy Racer A",10,1,8,1,1,8,8,8,8,3,3,3,3),
+    Part("Ultra Heavy Racer B",10,0,6,0,0,10,10,10,10,0,0,0,0),
+]
 
+KARTS = [
+    Part("Standard Kart"    ,2,4,3,3,4,3,3,3,3,3,2,3,3),
+    Part("Pipe Frame"       ,1,6,3,4,6,1,3,1,1,5,4,4,2),
+    Part("Mach 8"           ,3,3,2,4,4,3,3,5,4,2,2,4,2),
+    Part("Steel Driver"     ,4,1,1,3,2,4,5,2,0,1,5,1,1),
+    Part("Cat Cruiser"      ,2,5,4,3,5,2,2,3,4,4,2,3,4),
+    Part("Circuit Special"  ,3,1,3,1,1,5,1,4,2,1,1,2,0),
+    Part("Badwagon"         ,4,0,2,5,0,5,2,3,1,0,1,1,0),
+    Part("Prancer"          ,1,2,1,2,3,4,3,3,3,3,3,2,3),
+    Part("Biddybuggy"       ,0,7,1,4,7,0,1,2,1,5,4,5,4),
+    Part("Landship"         ,0,6,0,6,6,1,5,0,2,4,5,2,3),
+    Part("Sneeker"          ,2,2,1,0,3,4,2,3,3,3,2,3,2),
+    Part("Standard Bike"    ,1,5,3,5,5,2,2,4,3,4,3,4,3),
+    Part("Blue Falcon"      ,0,3,1,3,3,4,2,4,3,2,3,5,1),
+    Part("Tanooki Kart"     ,3,2,4,7,3,2,4,3,3,4,4,3,3),
+]
+
+GLIDERS = [
+    Part("Ultra Light Glider",0,2,1,1,2,0,1,1,1,1,0,1,2),
+    Part("Light Glider"      ,1,1,1,1,1,1,1,0,2,1,0,1,1),
+    Part("Medium Glider"     ,1,2,2,0,2,0,0,1,1,1,1,0,2),
+    Part("Heavy Glider"      ,2,1,2,0,1,1,0,1,2,1,1,0,1),
+]
+
+WHEELS = [
+    Part("Standard"      ,2,4,2,5,3,2,3,2,3,3,3,3,3),
+    Part("Monster"       ,4,2,3,7,2,2,2,2,1,0,1,0,1),
+    Part("Roller"        ,0,6,0,4,6,0,3,0,3,4,4,4,4),
+    Part("Slim"          ,2,2,4,1,2,3,2,4,2,4,4,3,4),
+    Part("Slick"         ,3,1,4,0,0,4,0,4,0,2,0,2,1),
+    Part("Metal"         ,4,0,1,2,0,4,3,1,2,2,2,1,0),
+    Part("Button"        ,0,5,1,3,5,1,2,2,2,3,3,4,2),
+    Part("Off-Road"      ,3,3,3,6,1,3,4,2,1,1,1,2,2),
+    Part("Sponge"        ,1,4,2,6,4,1,1,1,4,2,1,2,3),
+]
+
+'''
 RACERS = [
     Part("Mario"            ,6,2,4,2,2,6,6,6,6,4,4,4,4),
     Part("Luigi"            ,6,2,5,1,2,6,6,6,6,5,5,5,5),
@@ -60,15 +113,16 @@ KARTS = [
     Part("Steel Driver"     ,4,1,1,3,2,4,5,2,0,1,5,1,1),
     Part("Cat Cruiser"      ,2,5,4,3,5,2,2,3,4,4,2,3,4),
     Part("Circuit Special"  ,3,1,3,1,1,5,1,4,2,1,1,2,0),
-    Part("Tri-Speeder"      ,4,1,1,3,2,4,5,2,0,1,5,1,1),
     Part("Badwagon"         ,4,0,2,5,0,5,2,3,1,0,1,1,0),
     Part("Prancer"          ,1,2,1,2,3,4,3,3,3,3,3,2,3),
     Part("Biddybuggy"       ,0,7,1,4,7,0,1,2,1,5,4,5,4),
     Part("Landship"         ,0,6,0,6,6,1,5,0,2,4,5,2,3),
     Part("Sneeker"          ,2,2,1,0,3,4,2,3,3,3,2,3,2),
+    Part("Standard Bike"    ,1,5,3,5,5,2,2,4,3,4,3,4,3),
+    Part("Blue Falcon"      ,0,3,1,3,3,4,2,4,3,2,3,5,1),
+    Part("Tanooki Kart"     ,3,2,4,7,3,2,4,3,3,4,4,3,3),
     Part("Sports Coupe"     ,3,3,2,4,4,3,3,5,4,2,2,4,2),
     Part("Gold Standard"    ,2,2,1,0,3,4,2,3,3,3,2,3,2),
-    Part("Standard Bike"    ,1,5,3,5,5,2,2,4,3,4,3,4,3),
     Part("Comet"            ,2,5,4,3,5,2,2,3,4,4,2,3,4),
     Part("Sport Bike"       ,1,2,1,2,3,4,3,3,3,3,3,2,3),
     Part("The Duke"         ,2,4,3,3,4,3,3,3,3,3,2,3,3),
@@ -83,14 +137,13 @@ KARTS = [
     Part("GLA"              ,4,0,2,5,0,5,2,3,1,0,1,1,0),
     Part("W 25 Silver Arrow",1,5,3,5,5,2,2,4,3,4,3,4,3),
     Part("300 SL Roadster"  ,2,4,3,3,4,3,3,3,3,3,2,3,3),
-    Part("Blue Falcon"      ,0,3,1,3,3,4,2,4,3,2,3,5,1),
-    Part("Tanooki Kart"     ,3,2,4,7,3,2,4,3,3,4,4,3,3),
     Part("B Dasher"         ,3,1,3,1,1,5,1,4,2,1,1,2,0),
     Part("Master Cycle"     ,2,2,1,0,3,4,2,3,3,3,2,3,2),
     Part("Streetle"         ,0,6,0,6,6,1,5,0,2,4,5,2,3),
     Part("P-Wing"           ,3,1,3,1,1,5,1,4,2,1,1,2,0),
     Part("City Tripper"     ,1,6,3,4,6,1,3,1,1,5,4,4,2),
     Part("Bone Rattler"     ,4,1,1,3,2,4,5,2,0,1,5,1,1),
+    Part("Tri-Speeder"      ,4,1,1,3,2,4,5,2,0,1,5,1,1),
     Part("Koopa Clown"      ,3,2,4,7,3,2,4,3,3,4,4,3,3),
     Part("Splat Buggy"      ,0,3,1,3,3,4,2,4,3,2,3,5,1),
     Part("Inkstriker"       ,3,3,2,4,4,3,3,5,4,2,2,4,2)
@@ -136,3 +189,4 @@ GLIDERS = [
     Part("Hylian Kite"  ,1,1,1,1,1,1,1,0,2,1,0,1,1),
     Part("Paper Glider" ,0,2,1,1,2,0,1,1,1,1,0,1,2)
 ]
+'''

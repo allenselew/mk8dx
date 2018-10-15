@@ -2,7 +2,7 @@
 '''
 Base class for racers, karts, wheels and gliders.
 '''
-# TODO: figure out how to use **kwargs for __init__ and __add__
+
 class Part():
     def __init__(self, name,
         weight, acceleration, on_road_traction, off_road_traction,
@@ -32,7 +32,7 @@ class Part():
         mini_turbo = self.mini_turbo + other.mini_turbo
         ground_speed = self.ground_speed + other.ground_speed
         water_speed = self.water_speed + other.water_speed
-        antigravity_speed = self.antigravity_speed + self.antigravity_speed
+        antigravity_speed = self.antigravity_speed + other.antigravity_speed
         air_speed = self.air_speed + other.air_speed
         ground_handling = self.ground_handling + other.ground_handling
         water_handling = self.water_handling + other.water_handling
